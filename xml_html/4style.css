@@ -1,0 +1,16 @@
+body{
+	background: #d5dfe5;
+}
+
+.kutu {
+	width:960;
+	margin: 0 auto;
+}
+
+.kutu > header {
+
+}
+
+.kutu > header .logo {
+	
+}

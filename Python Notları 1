@@ -1,0 +1,263 @@
+Python
+
+---------LIST
+
+numbers = [1,2,3,4,5]
+
+len(numbers)
+#5
+
+numbers[0]
+#1
+
+numbers[0:2] #0. elemandan 2.elemana kadar, 2. dahil değil
+#[1,2]
+
+numbers[2:] #2. elemandan sonrası, 2 dahil
+#3,4,5
+
+------------ DICTIONARY -------------
+
+#Set by key / Get by key
+
+person['name'] = 'Nowell Strite'
+
+#Update
+
+person.update({
+	'favorites' :
+}
+
+)
+
+-------------- EXERCISE WITH STRINGS ---------------
+
+date = '%s %d %d' % ('Sept', 11, 2010)
+
+nname = '%(first)s %(last)s' % {
+	'firss' = 'Nowell'
+	'last' = 'Strite'   #HATALI OLABİLİR BU ÖRNEK
+}
+
+------- LOGICAL COMPARIMENTS --------
+
+#Logical And
+a and b
+
+#Logical Or
+a or b
+
+#Logical Negation
+not a
+
+#Compound
+(a and not (b or c))
+
+------------- IDENTITY COMPARIMENTS ------------
+
+#Identity
+1 is 1 == True
+
+# Non Identity
+1 is not '1' == True
+
+# Example
+
+bool(1) == True
+bool(True) == True
+
+1 and True == TRUE
+1 is True == FALSE
+
+-------- CONTROL STRUCTURE ----------- IF-ELIF -----
+
+grade = 82
+if grade >= 90:
+	if grade == 100:
+		print 'A+'
+	else:
+		print "A"
+elif grade >= 80:
+	print "B"
+elif grade >= 70:
+	print "C"
+else:
+	print "F"
+
+------------ FOR DÖNGÜSÜ ---------------
+
+for x in range (10): #0-9
+	print x
+
+---
+
+for x in range (15,20): #15-20
+	print x
+
+örn.
+
+fruits = ['Apple','Orange']
+
+for fruit in fruits:
+	print fruit
+
+------- FONKSİYONLAR ------------
+
+Tanımlarken başlangıcında def olur.
+
+def my_function():
+	print "Hello World"
+
+-------- İKİ BOYUTLU DİZİLER -------
+#for ile
+a[1,2,3,4,5] #tek boyutlu
+
+a2=[[1,2,3,4],[5,6,7,8],[9,10]]
+
+for i in a2:
+	for j in i:
+		print(i,j)
+
+-----------------------
+#while ile
+a2=[[1,2,3,4],[5,6,7,8],[9,10,11]]
+
+i = 0
+while i < len(a2):
+	j = 0
+	while j < len(a2[i]): #while ile yapımı
+		a2[i]
+		print(a2[i][j])
+		j += 1
+	i += 1
+
+--------- DİZİ İÇERİSİNDE ARAMA YAPMA ----------
+
+	a = [1,2,3,4,5]
+	b = 3
+	x = 0
+
+	for i in a:
+		if i==b:
+			index = a[x]
+			print("a arrayinin %d'ninci elemanı b'ye eşittir" % index)
+		x += 1
+
+----------- FONKSİYONLAR İÇİN ÖZEL ARGÜMANLAR -------------
+
+def some_method(*args,**kwargs):
+	for arg in args:
+		print(arg)
+	for key, value in kwargs.items():
+		print(key)
+
+some_method(1,2,3, name='Numbers')
+
+----FONKSİYONLARDA BİRDEN ÇOK DEĞER DÖNDÜRME------
+
+def yazilim(ad,soyad,yas,cinsiyet)
+	return(ad,soyad,yas,cinsiyet)
+
+degerler = yazilim("metin","ataş",30,"erkek")
+print(degerler)
+print(degerler[0])
+print([degerler[1]])
+
+------- GÖMÜLÜ FONKSİYONLAR ---------
+so in Python 3:
+
+< x.5: round down;
+== x.5: round to nearest even number;
+> x.5: round up.
+
+round(25.4) #yuvarlama
+abs(-24) #mutlak değer
+all() #dizi alır. dizi içerisindeki tüm değerler true ise true
+	  #dizi içerisinde en az bir tane false varsa false döner. 0 = false
+any() #en az birisi true ise true döner. all'un tam tersi.
+ascii() #ascii olmayan karakterlerin karşılığını verir.
+repr() #repr fonksiyonu ascii olmayan karakterle karşılaşsa bile,
+	   #bize ascii karşılığı döner.
+
+isim = "şeker"
+ascii(isim)
+\\u015feker
+
+repr(isim)
+şeker
+
+bool() #bir nesnenin boolean değerini bize döner.
+bin(10) #bir sayının ikili düzendeki karşılığını verir.
+bytes() # farklı veri tiplerini byte adı verilen veri tipine dönüştürür.
+chr() #kendisine parametre olarak verilen bir tam sayının karakter karşılığı
+set() #farklı veri tiplerini kümeye dönüştürmek
+
+------------ SABİTLER ---------------
+#Tamamiyle büyük harflerden oluşan tanımlayıcıların sabit değerler taşıdığı
+#varsayılır
+
+AD = "ali"
+SAYI=1221
+YIL=2017
+URL="http://www.ornek.com"
+
+----------HATA YAKALAMA-------------
+while True:
+	x = input("sayi gir:")
+	if not x:
+		break
+	try:
+		print(float(x)**2)
+	except:
+		print("girdigin sayi sayi degil müdür")
+
+--------- MODÜLLER -----------
+
+print("Naber?")
+def f(x):
+	return x+1
+def g():
+	print("Kaç kurtul buralardan!")
+	return
+
+#bir başka program
+
+import yukardaki_kodun_dosya_ismi as modul1
+modul1.f(5)
+
+#yada
+
+#tekrar import etmek için
+import imp
+imp.reload(modul1)
+
+#modül içerisindeki birden fazla fonksiyon çağırma
+
+from module1 import f,g
+#ya da
+from module1 import f as ff
+
+----------- KÜTÜPHANELER ------------
+
+Modül örneklerine bakmalısın şekerim.
+
+requests() 
+http
+Get
+post
+put
+delete
+patch
+
+----------- MODÜLLER DEVAM ------------
+
+import math
+dir(math) #math modülünün alt fonksiyonlarını gösterir.
+help(math.sqrt) #
+
+------ NESNE YÖNELİMLİ PROGRAMLAMA -----
+
++MODELLEME
++SINIF
+	-özellik
+	-davranış/işlem/aksiyon

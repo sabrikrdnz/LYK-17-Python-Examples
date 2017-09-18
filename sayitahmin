@@ -1,0 +1,16 @@
+from random import randint
+sayi = randint(0, 100)
+print('**')
+ks = int(input("Aklımdan bir sayi tuttum bil bakalım:"))
+
+while 1 == 1:
+	if ks < sayi:
+		print("Biraz arttır..")
+	elif ks > sayi:
+		print("Biraz azalt")
+	if ks == sayi:
+		print("Tebrikler!")
+		break	
+	ks = int(input("Olmadı baştan:"))
+
+#tebrikler demiyo

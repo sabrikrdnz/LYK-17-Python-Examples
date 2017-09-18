@@ -1,0 +1,31 @@
+{% block content %}
+<form method="post" action="/kullanici_kaydet" >
+	<input type="text" name="isim" placeholder="İsmi giriniz">
+	<input type="text" name="telefon" placeholder="Telefon numarasını giriniz">
+	<br />
+	<textarea name="bio" placeholder="Biography"></textarea>
+	<br />
+	<input type="submit" value="Yeni Kullanıcı">
+</form>
+
+{% endblock %}
+
+{% block footer %}
+<table width="100">
+	<thead>
+		<th>Id</th>
+		<th>Isim</th>
+		<th>Telefon</th>
+	</thead>
+	<tbody>
+		{% for kisi in kisilistesi %}
+		<tr>
+			<td>{{kisi.id}}</td>
+			<td><a href="/kisi/{{kisi.id}}">{{kisi.isim}}</a></td>
+			<td>{{kisi.telefon}}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}

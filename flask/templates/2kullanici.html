@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<br />
+<h2>İsim Listesi</h2>
+{% if bulunan == None %}
+{{kullanici_url}} bulunamadi.<br />
+{% else %}
+{{kullanici_url}} {{bulunan}}
+{% endif %}
+</body>
+</html>
